@@ -8,7 +8,8 @@ you can use "_beginthreadex " function in "msvcrt.dll" instead using CreateThrea
 
 ### note:
 ```
-_beginthread* functions actually call CreateThread under the hood, in C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\crt\src on my machine.
+_beginthreadex functions actually call CreateThread under the hood,
+in C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\crt\src on my machine.
 
 // From ~line 180 of beginthreadex.c
 /*
