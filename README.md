@@ -6,8 +6,9 @@ you can use "_beginthreadex " function in "msvcrt.dll" instead using CreateThrea
 
 (sliver payloads are safe more often and cause of bypassing maybe is not _beginthreadex but when you do not use Creathread Api this will help you a lot to bypass some AVs but still here VirtualAlloc and WriteProcessMemory used so this code will detect by some avs IF your payload was not Safe [like meterpreter] ;D)
 
-
-   _beginthread* functions actually call CreateThread under the hood, in C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\crt\src on my machine.
+### note:
+```
+_beginthread* functions actually call CreateThread under the hood, in C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\crt\src on my machine.
 
 // From ~line 180 of beginthreadex.c
 /*
@@ -25,7 +26,7 @@ if ( (thdl = (uintptr_t)
         err = GetLastError();
         goto error_return;
 }
-
+```
 
  ![](https://github.com/DamonMohammadbagher/NativePayload_CTX/blob/main/CTX1.png)
 
